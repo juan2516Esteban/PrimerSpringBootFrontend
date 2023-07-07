@@ -58,6 +58,10 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ProyectoSpringBootFrontend:build",
+            "open": true
+          },
           "configurations": {
             "production": {
               "browserTarget": "ProyectoSpringBootFrontend:build:production"
@@ -70,7 +74,8 @@
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
+          "options": 
+          {
             "browserTarget": "ProyectoSpringBootFrontend:build"
           }
         },
@@ -94,5 +99,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "725ee493-1004-4e86-97bc-218f99293224"
   }
 }
