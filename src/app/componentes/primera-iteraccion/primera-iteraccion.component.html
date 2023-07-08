@@ -1,0 +1,62 @@
+
+<h1>Soy el componente raiz</h1>
+
+<p>hola {{ nombre }} como estas</p>
+<!--ejemplo de string intern collection-->
+
+<h1>Vamos a mostrar una lista</h1>
+
+<p *ngFor="let list of nombrelist2">
+  <!-- asi se muestran los datos mediante un for -->
+  {{ list }}
+</p>
+
+<h2>soy una lista sin iterar</h2>
+
+<p>
+  {{ nombrelist2 }}
+  <!-- asi se muestran los datos de forma no iterativa -->
+</p>
+
+<h3>Mostrar un objeto</h3>
+
+<p *ngFor="let libro of listLibro">
+  {{ libro.idLibro }} -- {{ libro.titulo }} -- {{ libro.autor }}
+</p>
+
+<h4>Property Binding</h4>
+
+<img
+  style="height: 500px; width: 500px"
+  [src]="imagenUrl"
+  alt="no me pudo traer la imagen"
+/>
+
+<button [disabled]="estaProgresando" (click)="estadoBoton(true)">
+  Property Binding
+</button>
+
+<!-- Style Binding-->
+
+<h5>Style Binding</h5>
+<button
+  [class.activo]="estaProgresando"
+  [disabled]="estaProgresando"
+  (click)="estadoBoton(true)"
+>
+  Style Binding
+</button>
+
+<!-- otra forma de hacerlo -->
+
+<button [style.backgroundColor]="estaProgresando ? 'green' : 'black' ">Otra forma de Style Binding</button>
+
+<!--Event Binding -->
+
+<button (click)="mostrarEnvento($event)">Event Binding</button>
+
+<!--Event Flitering -->
+
+<p>Event Flitering</p>
+
+<button (keyup.enter)="mostrarEnvento($event)">Event Flitering Con Enter</button>
