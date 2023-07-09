@@ -1,1 +1,11 @@
 <p>hijo works!</p>
+
+<p>{{recibido}}</p>
+
+<p *ngFor="let lista of recibidoArray">
+    {{lista}}
+</p>
+
+<p *ngFor="let listaObjeto of recibidoObjeto">
+    {{listaObjeto.autor}} , {{listaObjeto.idLibro}} , {{listaObjeto.titulo}}
+</p>
