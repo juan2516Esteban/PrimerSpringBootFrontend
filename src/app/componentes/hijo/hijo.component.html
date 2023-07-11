@@ -9,3 +9,10 @@
 <p *ngFor="let listaObjeto of recibidoObjeto">
     {{listaObjeto.autor}} , {{listaObjeto.idLibro}} , {{listaObjeto.titulo}}
 </p>
+
+<div>
+    <p>Eviar mensaje al padre</p>
+    <button (click)="enviar()">Enviar a padre</button>
+</div>
+
+<p>Termina sección de hijo</p>

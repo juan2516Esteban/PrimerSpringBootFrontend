@@ -1,3 +1,44 @@
 <p>padre works!</p>
 
-<app-hijo [recibido]="mensajeHijo" [recibidoArray]="mensajeArray" [recibidoObjeto]="listaObjetos"></app-hijo>
+<app-hijo [recibido]="mensajeHijo" [recibidoArray]="mensajeArray" [recibidoObjeto]="listaObjetos"
+(enviarPapá)="recibirMensajeHijo($event)"></app-hijo>
+
+<p>{{MensajePadre}}</p>
+
+<section>
+    <p>Directiva NgModel</p>
+    
+    <p>Creación de un libro</p>
+   
+    <mat-form-field class="example-form-field">
+        <mat-label>Ingrese un Id</mat-label>
+        <input matInput type="text" [(ngModel)]="libroDtos.idLibro">
+        <button *ngIf="libroDtos.idLibro" matSuffix mat-icon-button aria-label="Clear" (click)="libroDtos.idLibro= undefined">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+      
+      
+    <p>Titulo libro</p>
+
+    <mat-form-field class="example-form-field">
+        <mat-label>Ingrese el titulo</mat-label>
+        <input matInput type="text" [(ngModel)]="libroDtos.titulo">
+        <button *ngIf="libroDtos.titulo" matSuffix mat-icon-button aria-label="Clear" (click)="libroDtos.titulo=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+      
+    <p>Nombre autor libro</p>
+
+        <mat-form-field class="example-form-field">
+        <mat-label>Ingrese el autor</mat-label>
+        <input matInput type="text" [(ngModel)]="libroDtos.autor">
+        <button *ngIf="libroDtos.autor" matSuffix mat-icon-button aria-label="Clear" (click)="libroDtos.autor=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+
+    <button (click)="mostrarLibro()" mat-stroked-button color="warn">Mostrar Libro</button>
+</section>
+

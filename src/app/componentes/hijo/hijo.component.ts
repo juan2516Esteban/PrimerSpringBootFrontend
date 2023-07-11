@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { LibroDto } from "src/assets/Models/LibroDto";
 
 @Component({
@@ -12,6 +12,12 @@ export class HijoComponent implements OnInit {
   @Input() public recibidoArray: Array<any> = ["estoy vacio"];
   @Input() public recibido!: String;
   @Input() public recibidoObjeto!: Array<LibroDto>;
+
+  @Output() enviarPapá = new EventEmitter();
+
+  enviar() {
+    this.enviarPapá.emit("hola desde el hijo");
+  }
 
   ngOnInit(): void {
     console.log(this.recibido);

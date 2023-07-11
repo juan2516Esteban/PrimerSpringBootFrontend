@@ -1,0 +1,12 @@
+<p>user works!</p>
+
+<ng-container *ngIf="!isLogged; else logeado">
+    <button (click)="isLogged = true">Iniciar Sección</button>
+    <button>Registrar</button>
+    <button (click)="nivel= nivel + 1">Sumar</button>
+    {{nivel}}
+</ng-container>
+
+<ng-template #logeado>
+    <p>Hola soy un template</p>
+</ng-template>

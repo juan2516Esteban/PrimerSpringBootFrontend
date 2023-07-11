@@ -3,6 +3,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { HijoComponent } from "./componentes/hijo/hijo.component";
 import { PrimeraIteraccionComponent } from "./componentes/primera-iteraccion/primera-iteraccion.component";
 import { PadreComponent } from "./componentes/padre/padre.component";
+import { UserComponent } from "./componentes/user/user.component";
 
 const routes: Routes = [
   {
@@ -16,6 +17,14 @@ const routes: Routes = [
   {
     path: "padre",
     component: PadreComponent
+  },
+  {
+    path: "user",
+    component: UserComponent
+  },
+  {
+    path: "**",
+    redirectTo: "primeraVista"
   }
 ];
 

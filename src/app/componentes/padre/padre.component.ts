@@ -1,3 +1,4 @@
+import { ReturnStatement } from "@angular/compiler";
 import { Component, OnInit } from "@angular/core";
 import { LibroDto } from "src/assets/Models/LibroDto";
 
@@ -18,7 +19,11 @@ export class PadreComponent implements OnInit {
     console.log(this.listaObjetos);
   }
 
-  public mensajeHijo: String = "Soy tu padre";
+  public MensajePadre: String = "no he recivido nada";
+  public listaObjetos: Array<LibroDto> = [];
+  public mensajeHijo: String = "hola soy tu padre";
+  public libroDtos: LibroDto = new LibroDto();
+  value = "";
 
   public mensajeArray: Array<any> = [
     1,
@@ -30,5 +35,12 @@ export class PadreComponent implements OnInit {
     "Entro a las 4 a trabajar"
   ];
 
-  public listaObjetos: Array<LibroDto> = [];
+  recibirMensajeHijo($event: String): void {
+    this.MensajePadre = $event;
+    console.log($event);
+  }
+
+  mostrarLibro() {
+    console.log(this.libroDtos);
+  }
 }
