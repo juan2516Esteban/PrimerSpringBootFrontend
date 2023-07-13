@@ -10,3 +10,16 @@
 <ng-template #logeado>
     <p>Hola soy un template</p>
 </ng-template>
+
+<section>
+    <h1>Formularios Reactivos</h1>
+    <form [formGroup]="formLibro" (ngSubmit)="enviarFormulario()">
+        <samp>Id Libro</samp>
+        <input type="number" formControlName="idLibro">
+        <samp>Nombre Autor</samp>
+        <input type="text" formControlName="autor">
+        <samp>Titulo del libro</samp>
+        <input type="text" formControlName="titulo">
+        <button type="submit" [disabled]="formLibro.invalid">Enviar Libro</button>
+    </form>
+</section>

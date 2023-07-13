@@ -1,0 +1,24 @@
+<p>editorial works!</p>
+
+<section>
+    <h1>Formularios Reactivos</h1>
+    <form [formGroup]="formEditorial" (ngSubmit)="enviarEditorial()">
+        <samp>Nombre de la Editorial</samp>
+        <input type="text" formControlName="nombre">
+        <samp>Dirección de la editorial</samp>
+        <input type="text" formControlName="direccion">
+        <button type="submit" [disabled]="formEditorial.invalid">Enviar Libro</button>
+    </form>
+</section>
+
+<button (click)="obtenerEditorial()">obtenerEditorial</button>
+
+<p>Valor de libro es:</p>
+<p>El Id del libro es</p>
+{{iEdtitorial.id | currency}}
+<p>El nombre es:</p>
+{{iEdtitorial.nombre | uppercase}}
+<p>La direccion es</p>
+{{iEdtitorial.direccion | lowercase}}
+
+
