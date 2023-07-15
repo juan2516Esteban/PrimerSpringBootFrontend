@@ -18,6 +18,8 @@ import { BreadcrumbModule } from "primeng/breadcrumb";
 import { EpisodiosComponent } from "./componentes/episodios/episodios.component";
 import { LogginComponent } from "./componentes/loggin/loggin.component";
 import { CardModule } from "primeng/card";
+import { ButtonModule } from "primeng/button";
+import { InfoRickComponent } from './componentes/info-rick/info-rick.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { CardModule } from "primeng/card";
     PrimeraIteraccionComponent,
     UserComponent,
     EditorialComponent,
-    LogginComponent
+    LogginComponent,
+    InfoRickComponent
   ],
   imports: [
     BreadcrumbModule,
@@ -42,7 +45,8 @@ import { CardModule } from "primeng/card";
     MatTableModule,
     ReactiveFormsModule,
     HttpClientModule,
-    CardModule
+    CardModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

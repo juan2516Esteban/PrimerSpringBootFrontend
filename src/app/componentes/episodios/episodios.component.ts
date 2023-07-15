@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { RickAndMortyService } from "src/app/service/rick-and-morty.service";
 import { MenuItem } from "primeng/api";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-episodios",
@@ -8,16 +9,15 @@ import { MenuItem } from "primeng/api";
   styleUrls: ["./episodios.component.css"]
 })
 export class EpisodiosComponent implements OnInit {
-  items: MenuItem[] | undefined;
-  home: MenuItem | undefined;
+  constructor(private service: RickAndMortyService, private router: Router) {
+    this.odtenerEpisodios();
+  }
 
   ngOnInit() {
     this.items = [
-      { label: "Computer" },
-      { label: "Notebook" },
-      { label: "Accessories" },
-      { label: "Backpacks" },
-      { label: "Item" }
+      { label: "Iniciar sesion", routerLink: "/loggin" },
+      { label: "Padre", routerLink: "/padre" },
+      { label: "Hijo", routerLink: "/hijo" }
     ];
 
     this.home = { icon: "pi pi-home", routerLink: "/" };
@@ -25,22 +25,20 @@ export class EpisodiosComponent implements OnInit {
     console.log(this.items);
   }
 
+  items: MenuItem[] | undefined;
+  home: MenuItem | undefined;
   public episodios?: any;
-
-  constructor(private service: RickAndMortyService) {
-    this.odtenerEpisodios();
-  }
 
   displayedColumns: string[] = ["id", "name", " air_date", "episode"];
 
   public odtenerEpisodios() {
     this.service.obtenerEpisodios().subscribe((results: any) => {
       this.episodios = Array.from(results.results);
-      this.mostrarEpisodios();
     });
   }
 
-  public mostrarEpisodios() {
-    console.log(this.episodios);
+  public capturarId(id: number) {
+    console.log(id);
+    this.router.navigate(["/infoRick", id]);
   }
 }

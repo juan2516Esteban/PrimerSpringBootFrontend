@@ -17,4 +17,8 @@ export class RickAndMortyService {
   public obtenerEpisodios() {
     return this.http.get(this.urlRick + "/episode");
   }
+
+  public obtenerinfoEpisode(id: number) {
+    return this.http.get(this.urlRick + "/episode/" + id);
+  }
 }
